@@ -152,7 +152,7 @@ html, body {
 .news-wrapper {
   flex:1;
   display:flex;
-  justify-content:center;
+  justify-content:flex-end;
 }
 
 .news-card {
@@ -361,3 +361,4 @@ footer {
   .hero { height:55vh; }
   .hero-balao { max-width:230px; }
 }
+
