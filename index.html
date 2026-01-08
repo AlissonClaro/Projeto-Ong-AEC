@@ -24,6 +24,7 @@
             <nav class="nav">
                 <a href="#sobre">Sobre</a>
                 <a href="#programas">Programas</a>
+                <a href="/mural.html">Mural</a>
                 <a href="#eventos">Eventos</a>
                 <a href="#voluntarie">Voluntarie-se</a>
                 <a href="/doacao.html" class="btn-header">Doar</a>
@@ -107,6 +108,46 @@
             </div>
         </section>
 
+        <!-- GALERIA -->
+        <section class="section container galeria">
+            <h3>Nossos Momentos</h3>
+
+            <div class="carousel">
+                <button class="carousel-btn prev">&#10094;</button>
+
+                <div class="carousel-track">
+
+                    <div class="carousel-slide">
+                        <a href="/mural.html" class="carousel-link">
+                            <img src="/source_gallery/foto1.jpg" alt="Atividade com crianças">
+                        </a>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <a href="/mural.html" class="carousel-link">
+                            <img src="/source_gallery/foto2.jpg" alt="Evento comunitário">
+                        </a>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <a href="/mural.html" class="carousel-link">
+                            <img src="/source_gallery/foto3.jpg" alt="Ação solidária">
+                        </a>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <a href="/mural.html" class="carousel-link">
+                            <img src="/source_gallery/foto4.jpg" alt="Educação e inclusão">
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <button class="carousel-btn next">&#10095;</button>
+            </div>
+        </section>
+
         <!-- EVENTOS -->
         <section id="eventos" class="section container">
             <h3>Eventos</h3>
@@ -186,6 +227,37 @@
     <footer>
         <p>© 2025 Associação A Esperança da Criança</p>
     </footer>
+
+    <!-- Carousel Script -->
+
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        });
+
+        // Auto play (opcional)
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        }, 5000);
+    </script>
 
 </body>
 
