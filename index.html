@@ -10,6 +10,15 @@
 
 <body>
 
+    <!-- LOADING -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="/source/logo_loading.png" alt="Logo ONG">
+            <span>Carregando esperança...</span>
+        </div>
+    </div>
+
+
     <header class="header">
         <div class="header-inner">
 
@@ -17,7 +26,7 @@
                 <img src="/source/logo.png" alt="Logo ONG" class="logo">
                 <div class="brand-text">
                     <span class="brand-name">A Esperança da Criança</span>
-                    <span class="brand-sub">Comunidade • Educação • Saúde</span>
+                    <span class="brand-sub">Trazendo a esperança para as crianças</span>
                 </div>
             </div>
 
@@ -258,6 +267,18 @@
             updateCarousel();
         }, 5000);
     </script>
+
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+
+            // Pequeno delay para valorizar o efeito
+            setTimeout(() => {
+                loader.classList.add('hide');
+            }, 300);
+        });
+    </script>
+
 
 </body>
 
