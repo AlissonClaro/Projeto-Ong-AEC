@@ -6,26 +6,37 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 
 /* ===== BODY DOAÇÃO ===== */
 .doacao-body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centraliza verticalmente */
-  align-items: center;     /* centraliza horizontalmente */
-  min-height: 100vh;       /* ocupa toda a altura da tela */
-  margin: 0;
-  padding: 0;
   background-image: url('/source/hero.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+
+/* ===== WRAPPER CENTRALIZADOR ===== */
+.doacao-wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+
 /* ===== HEADER ===== */
 .doacao-body header {
   width: 100%;
-  background: #ffffff; /* fundo branco */
+  background: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +49,6 @@
 /* ===== LOGO ===== */
 .doacao-body .logo {
   text-align: center;
-  width: auto;
 }
 
 .doacao-body .logo img {
@@ -48,8 +58,8 @@
 
 /* ===== CONTAINER DOAÇÃO ===== */
 .doacao-container {
-  background: rgba(255, 255, 255, 0.555); /* semi-transparente */
-  backdrop-filter: blur(10px);           /* efeito borrado */
+  background: rgba(255, 255, 255, 0.555);
+  backdrop-filter: blur(10px);
   padding: 40px;
   border-radius: 20px;
   text-align: center;
@@ -59,7 +69,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin: 0; /* 🔥 remove o bug */
 }
 
 /* ===== FORM ===== */
@@ -73,7 +83,6 @@
 
 .form-group {
   width: 100%;
-  text-align: center;
 }
 
 .form-group input,
@@ -84,7 +93,6 @@
   border-radius: 10px;
   font-size: 1rem;
   outline: none;
-  box-sizing: border-box;
 }
 
 /* ===== BOTÃO DOAR ===== */
@@ -108,7 +116,7 @@
 
 /* ===== FOOTER ===== */
 footer {
-  margin-top: 30px;
+  margin-top: auto;
   background: #1b2b4b;
   color: #d9e6f2;
   text-align: center;
@@ -116,6 +124,7 @@ footer {
   font-size: 0.9rem;
   width: 100%;
 }
+
 
 /* ===== RESPONSIVIDADE ===== */
 @media screen and (max-width: 480px) {

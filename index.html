@@ -32,7 +32,6 @@
                 <a href="#sobre">Sobre</a>
                 <a href="#programas">Programas</a>
                 <a href="/mural.html">Mural</a>
-                <a href="#eventos">Eventos</a>
                 <a href="#contato">Voluntarie-se</a>
                 <a href="/doacao.html" class="btn-header">Doar</a>
             </nav>
@@ -53,10 +52,11 @@
             <div class="intro-layout">
 
                 <div class="intro-text">
-                    <h2>Esperança da Criança</h2>
+                    <h2>A Esperança da Criança</h2>
                     <p>
-                        Atuamos com educação, segurança alimentar e inclusão social.<br>
-                        Trabalhamos com famílias, escolas e parceiros para criar oportunidades reais.
+                        Homologada no CMDCA, a Associação acredita que vínculos fortes transformam vidas.
+                        Nosso trabalho é cuidar, acolher e fortalecer os laços familiares e sociais, criando um ambiente
+                        onde crianças se sintam seguras, pertencentes e valorizadas.
                     </p>
 
                     <div class="intro-btns">
@@ -80,7 +80,15 @@
         <!-- SOBRE -->
         <section id="sobre" class="section container">
             <h3>Sobre a ONG</h3>
-            <p>Fundada em 2018, atuamos com educação complementar, reforço escolar e apoio psicossocial.</p>
+            <p>A Associação A Esperança da Criança, fundada em 2018, é uma organização homologada no CMDCA que atua no
+                fortalecimento dos vínculos sociais e familiares de crianças e adolescentes. <br>A ONG desenvolve ações
+                de
+                convivência, acolhimento e proteção social, oferecendo refeições e oficinas como artes, música,
+                gastronomia lúdica, inclusão digital, atividades sócioeducativas e recreação. <br>Seu trabalho é
+                realizado
+                em parceria com famílias e a comunidade, promovendo cuidado, pertencimento e desenvolvimento em um
+                ambiente seguro e humanizado.</p>
+                <br>
 
             <div class="grid-3">
                 <div class="card reveal">
@@ -155,7 +163,7 @@
             </div>
         </section>
 
-        <!-- EVENTOS -->
+        <!-- EVENTOS
         <section id="eventos" class="section container">
             <h3>Eventos</h3>
 
@@ -180,7 +188,7 @@
                     <p>📍 Centro Praça Maria Izabel – Marília, SP • 00:00 — 23:59</p>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- CONTATO -->
         <section id="contato" class="section container contato">
@@ -233,7 +241,7 @@
     </main>
 
     <footer class="reveal">
-        <p>© 2025 Associação A Esperança da Criança</p>
+        <p>© 2025 Associação A Esperança da Criança - Conselho Municipal dos Direitos da Criança e do Adolescente</p>
     </footer>
 
     <!-- CAROUSEL -->
@@ -296,6 +304,70 @@
         );
 
         revealElements.forEach(el => observer.observe(el));
+    </script>
+
+
+    <script>
+        // ===== CURSOR CUSTOM =====
+        const cursor = document.createElement("div");
+        cursor.classList.add("custom-cursor");
+        document.body.appendChild(cursor);
+
+        let mouseX = 0, mouseY = 0;
+        let lastScrollY = window.scrollY;
+        let lastTime = 0;
+
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursor.style.left = mouseX + "px";
+            cursor.style.top = mouseY + "px";
+
+            createGlitter(mouseX, mouseY, "mouse");
+        });
+
+        // ===== GLITTER NO SCROLL =====
+        window.addEventListener("scroll", () => {
+            const scrollDiff = window.scrollY - lastScrollY;
+            lastScrollY = window.scrollY;
+
+            if (Math.abs(scrollDiff) > 2) {
+                createGlitter(
+                    mouseX + (Math.random() - 0.5) * 20,
+                    mouseY + (Math.random() - 0.5) * 20,
+                    "scroll"
+                );
+            }
+        });
+
+        // ===== FUNÇÃO GLITTER =====
+        function createGlitter(x, y, type) {
+            const now = Date.now();
+            if (now - lastTime < 30) return;
+            lastTime = now;
+
+            const glitter = document.createElement("span");
+            glitter.className = "glitter";
+
+            const size = type === "scroll"
+                ? Math.random() * 4 + 3
+                : Math.random() * 6 + 5;
+
+            const moveX = (Math.random() - 0.5) * 50;
+            const moveY = (Math.random() - 0.5) * 50;
+
+            glitter.style.width = size + "px";
+            glitter.style.height = size + "px";
+            glitter.style.left = x + "px";
+            glitter.style.top = y + "px";
+            glitter.style.setProperty("--x", moveX + "px");
+            glitter.style.setProperty("--y", moveY + "px");
+
+            document.body.appendChild(glitter);
+
+            setTimeout(() => glitter.remove(), 1300);
+        }
     </script>
 
 

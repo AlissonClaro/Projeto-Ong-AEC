@@ -26,7 +26,6 @@
                 <a href="/index.html">Início</a>
                 <a href="/index.html#sobre">Sobre</a>
                 <a href="/index.html#programas">Programas</a>
-                <a href="/index.html#eventos">Eventos</a>
                 <a href="/index.html#voluntarie">Voluntarie-se</a>
                 <a href="/doacao.html" class="btn-header">Doar</a>
 
@@ -270,7 +269,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2025 Associação A Esperança da Criança</p>
+        <p>© 2025 Associação A Esperança da Criança - Conselho Municipal dos Direitos da Criança e do Adolescente</p>
     </footer>
 
     <!-- MODAL GALERIA -->
@@ -334,6 +333,68 @@
         });
     </script>
 
+    <script>
+        // ===== CURSOR CUSTOM =====
+        const cursor = document.createElement("div");
+        cursor.classList.add("custom-cursor");
+        document.body.appendChild(cursor);
+
+        let mouseX = 0, mouseY = 0;
+        let lastScrollY = window.scrollY;
+        let lastTime = 0;
+
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursor.style.left = mouseX + "px";
+            cursor.style.top = mouseY + "px";
+
+            createGlitter(mouseX, mouseY, "mouse");
+        });
+
+        // ===== GLITTER NO SCROLL =====
+        window.addEventListener("scroll", () => {
+            const scrollDiff = window.scrollY - lastScrollY;
+            lastScrollY = window.scrollY;
+
+            if (Math.abs(scrollDiff) > 2) {
+                createGlitter(
+                    mouseX + (Math.random() - 0.5) * 20,
+                    mouseY + (Math.random() - 0.5) * 20,
+                    "scroll"
+                );
+            }
+        });
+
+        // ===== FUNÇÃO GLITTER =====
+        function createGlitter(x, y, type) {
+            const now = Date.now();
+            if (now - lastTime < 30) return;
+            lastTime = now;
+
+            const glitter = document.createElement("span");
+            glitter.className = "glitter";
+
+            const size = type === "scroll"
+                ? Math.random() * 4 + 3
+                : Math.random() * 6 + 5;
+
+            const moveX = (Math.random() - 0.5) * 50;
+            const moveY = (Math.random() - 0.5) * 50;
+
+            glitter.style.width = size + "px";
+            glitter.style.height = size + "px";
+            glitter.style.left = x + "px";
+            glitter.style.top = y + "px";
+            glitter.style.setProperty("--x", moveX + "px");
+            glitter.style.setProperty("--y", moveY + "px");
+
+            document.body.appendChild(glitter);
+
+            setTimeout(() => glitter.remove(), 1300);
+        }
+    </script>
 
 </body>
 
