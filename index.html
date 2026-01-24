@@ -30,7 +30,7 @@
 
             <nav class="nav">
 
-                <!-- BOTÃO CASCATA (MOBILE) -->
+                <!-- BOTÃO MOBILE -->
                 <button class="menu-toggle" aria-label="Abrir menu">
                     <span></span>
                     <span></span>
@@ -39,7 +39,7 @@
 
                 <!-- LINKS -->
                 <div class="nav-links">
-                    <a href="/index.html#sobre">Sobre</a>
+                    <a href="/index.html#sobre">Home</a>
                     <a href="/index.html#oficinas">Oficinas</a>
                     <a href="/mural.html">Mural</a>
                     <a href="/index.html#contato">Voluntarie-se</a>
@@ -49,9 +49,10 @@
 
             </nav>
 
-
         </div>
     </header>
+
+
 
     <main>
 
@@ -350,38 +351,30 @@
 
     <script>
         const toggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        const menu = document.querySelector('.nav-links');
         const overlay = document.querySelector('.menu-overlay');
 
-        function openMenu() {
-            navLinks.classList.add('active');
-            overlay.classList.add('active');
-            toggle.classList.add('open');
-        }
-
-        function closeMenu() {
-            navLinks.classList.remove('active');
-            overlay.classList.remove('active');
-            toggle.classList.remove('open');
-        }
-
         toggle.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
+            toggle.classList.toggle('open');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
         });
 
-        // Fecha ao clicar no overlay
-        overlay.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', () => {
+            toggle.classList.remove('open');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
 
-        // Fecha ao clicar em qualquer link
+        // Fecha menu ao clicar em qualquer link
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', closeMenu);
+            link.addEventListener('click', () => {
+                toggle.classList.remove('open');
+                menu.classList.remove('active');
+                overlay.classList.remove('active');
+            });
         });
     </script>
-
 
     <div class="menu-overlay"></div>
 

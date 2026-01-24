@@ -41,7 +41,7 @@
 
                 <!-- LINKS -->
                 <div class="nav-links">
-                    <a href="/index.html#sobre">Sobre</a>
+                    <a href="/index.html#sobre">Home</a>
                     <a href="/index.html#oficinas">Oficinas</a>
                     <a href="/mural.html">Mural</a>
                     <a href="/index.html#contato">Voluntarie-se</a>
@@ -90,7 +90,7 @@
                     <h4>Emenda Parlamentar</h4>
                     <p><strong>Parlamentar:</strong> Nome do Parlamentar</p>
                     <p><strong>Órgão:</strong> *</p>
-                    <p><strong>Ano:</strong> *</p>
+                    <p><strong>Ano:</strong> */p>
                     <p><strong>Valor:</strong> R$ *</p>
                     <p><strong>Finalidade:</strong> *</p>
                     <p><strong>Status:</strong> *</p>
@@ -252,24 +252,35 @@
 
     <script>
         const toggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+        const menu = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.menu-overlay');
 
         toggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            toggle.classList.toggle('open');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
         });
 
-        // Fecha o menu ao clicar em um link
+        overlay.addEventListener('click', () => {
+            toggle.classList.remove('open');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Fecha menu ao clicar em qualquer link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+                toggle.classList.remove('open');
+                menu.classList.remove('active');
+                overlay.classList.remove('active');
             });
         });
     </script>
+
 
     <div class="menu-overlay"></div>
     <div class="custom-cursor"></div>
 
 </body>
-
 
 </html>
