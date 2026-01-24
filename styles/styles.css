@@ -340,7 +340,7 @@ section h3 {
   font-weight: 600;
   color: #004b8d;
   margin-bottom: 1.5rem;
-  margin-top: 0rem;
+  margin-top: 1rem;
 }
 
 .grid-3 {
@@ -1033,7 +1033,7 @@ body {
 }
 
 .nav-links .btn-header {
-  margin-top: 1rem;
+  margin-top: 0rem;
   text-align: center;
 }
 
