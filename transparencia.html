@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparência | Associação A Esperança da Criança</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body>
+
+    <!-- LOADING -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="/source/logo_loading.png" alt="Logo ONG">
+            <span>Carregando esperança...</span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+
+            <div class="brand">
+                <img src="/source/logo.png" alt="Logo OSC" class="logo">
+                <div class="brand-text">
+                    <span class="brand-name">A Esperança da Criança</span>
+                    <span class="brand-sub">Trazendo a esperança para as crianças</span>
+                </div>
+            </div>
+
+            <nav class="nav">
+
+                <!-- BOTÃO MOBILE -->
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- LINKS -->
+                <div class="nav-links">
+                    <a href="/index.html#sobre">Sobre</a>
+                    <a href="/index.html#oficinas">Oficinas</a>
+                    <a href="/mural.html">Mural</a>
+                    <a href="/index.html#contato">Voluntarie-se</a>
+                    <a href="/transparencia.html">Transparência</a>
+                    <a href="/doacao.html" class="btn-header">Doar</a>
+                </div>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+            <img src="/source/hero.png" alt="Imagem Hero" class="hero-img reveal">
+            <img src="/source/mobile.png" alt="Imagem Hero" class="hero-mobile reveal">
+        </section>
+
+        <!-- INTRO TRANSPARÊNCIA -->
+        <section class="section container">
+            <div class="intro-layout">
+
+                <div class="intro-text">
+                    <h2>Transparência</h2>
+                    <p>
+                        A Associação A Esperança da Criança reafirma seu compromisso com a ética,
+                        responsabilidade social e a correta aplicação dos recursos recebidos.
+                        Nesta página estão disponíveis informações sobre
+                        <strong>emendas parlamentares</strong> e
+                        <strong>recursos provenientes de órgãos públicos</strong>.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LISTA DE RECURSOS -->
+        <section class="section container">
+            <h3>Recursos Públicos Recebidos</h3>
+
+            <div class="grid-3">
+
+                <div class="card reveal">
+                    <h4>Emenda Parlamentar</h4>
+                    <p><strong>Parlamentar:</strong> Nome do Parlamentar</p>
+                    <p><strong>Órgão:</strong> *</p>
+                    <p><strong>Ano:</strong> */p>
+                    <p><strong>Valor:</strong> R$ *</p>
+                    <p><strong>Finalidade:</strong> *</p>
+                    <p><strong>Status:</strong> *</p>
+                </div>
+
+                <div class="card reveal">
+                    <h4>Recurso Municipal</h4>
+                    <p><strong>Órgão:</strong> Prefeitura Municipal</p>
+                    <p><strong>Programa:</strong> Fundo da Criança e do Adolescente</p>
+                    <p><strong>Ano:</strong> *</p>
+                    <p><strong>Valor:</strong> R$ *</p>
+                    <p><strong>Finalidade:</strong> Apoio psicossocial</p>
+                    <p><strong>Status:</strong> *</p>
+                </div>
+
+                <div class="card reveal">
+                    <h4>Convênio Estadual</h4>
+                    <p><strong>Órgão:</strong> *</p>
+                    <p><strong>Nº do Convênio:</strong> *</p>
+                    <p><strong>Vigência:</strong> *</p>
+                    <p><strong>Valor Total:</strong> R$ *</p>
+                    <p><strong>Finalidade:</strong> *</p>
+                    <p><strong>Status:</strong> *</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DOCUMENTOS -->
+        <section class="section container">
+            <h3>Documentos e Prestação de Contas</h3>
+
+            <div class="grid-3 transparencia-cards">
+
+                <div class="card reveal">
+                    <div class="card-content">
+                        <h4>Relatório Anual 2024</h4>
+                        <p>Prestação de contas completa.</p>
+                    </div>
+                    <a href="#" class="btn-outline">Visualizar PDF</a>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-content">
+                        <h4>Plano de Trabalho</h4>
+                        <p>Projetos e metas estabelecidas.</p>
+                    </div>
+                    <a href="#" class="btn-outline">Visualizar PDF</a>
+                </div>
+
+                <div class="card reveal">
+                    <div class="card-content">
+                        <h4>Certificações</h4>
+                        <p>CMDCA e demais homologações.</p>
+                    </div>
+                    <a href="#" class="btn-outline">Visualizar PDF</a>
+                </div>
+
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="reveal">
+        <p>© 2025 Associação A Esperança da Criança - Conselho Municipal dos Direitos da Criança e do Adolescente</p>
+    </footer>
+
+    <!-- LOADER -->
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => loader.classList.add('hide'), 300);
+        });
+    </script>
+
+    <!-- REVEAL -->
+    <script>
+        document.documentElement.classList.remove('no-js');
+
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => observer.observe(el));
+    </script>
+
+    <script>
+        // ===== CURSOR CUSTOM =====
+        const cursor = document.createElement("div");
+        cursor.classList.add("custom-cursor");
+        document.body.appendChild(cursor);
+
+        let mouseX = 0, mouseY = 0;
+        let lastScrollY = window.scrollY;
+        let lastTime = 0;
+
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            cursor.style.left = mouseX + "px";
+            cursor.style.top = mouseY + "px";
+
+            createGlitter(mouseX, mouseY, "mouse");
+        });
+
+        // ===== GLITTER NO SCROLL =====
+        window.addEventListener("scroll", () => {
+            const scrollDiff = window.scrollY - lastScrollY;
+            lastScrollY = window.scrollY;
+
+            if (Math.abs(scrollDiff) > 2) {
+                createGlitter(
+                    mouseX + (Math.random() - 0.5) * 20,
+                    mouseY + (Math.random() - 0.5) * 20,
+                    "scroll"
+                );
+            }
+        });
+
+        // ===== FUNÇÃO GLITTER =====
+        function createGlitter(x, y, type) {
+            const now = Date.now();
+            if (now - lastTime < 30) return;
+            lastTime = now;
+
+            const glitter = document.createElement("span");
+            glitter.className = "glitter";
+
+            const size = type === "scroll"
+                ? Math.random() * 4 + 3
+                : Math.random() * 6 + 5;
+
+            const moveX = (Math.random() - 0.5) * 50;
+            const moveY = (Math.random() - 0.5) * 50;
+
+            glitter.style.width = size + "px";
+            glitter.style.height = size + "px";
+            glitter.style.left = x + "px";
+            glitter.style.top = y + "px";
+            glitter.style.setProperty("--x", moveX + "px");
+            glitter.style.setProperty("--y", moveY + "px");
+
+            document.body.appendChild(glitter);
+
+            setTimeout(() => glitter.remove(), 1300);
+        }
+    </script>
+
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fecha o menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <div class="menu-overlay"></div>
+    <div class="custom-cursor"></div>
+
+</body>
+
+</html>

@@ -12,7 +12,7 @@
     <!-- LOADING -->
     <div id="loader">
         <div class="loader-content">
-            <img src="/source/logo_loading.png" alt="Logo ONG">
+            <img src="/source/logo_loading.png" alt="Logo OSC">
             <span>Carregando esperança...</span>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <div class="header-inner">
 
             <div class="brand">
-                <img src="/source/logo.png" alt="Logo ONG" class="logo">
+                <img src="/source/logo.png" alt="Logo OSC" class="logo">
                 <div class="brand-text">
                     <span class="brand-name">A Esperança da Criança</span>
                     <span class="brand-sub">Trazendo a esperança para as crianças</span>
@@ -29,12 +29,26 @@
             </div>
 
             <nav class="nav">
-                <a href="#sobre">Sobre</a>
-                <a href="#programas">Programas</a>
-                <a href="/mural.html">Mural</a>
-                <a href="#contato">Voluntarie-se</a>
-                <a href="/doacao.html" class="btn-header">Doar</a>
+
+                <!-- BOTÃO CASCATA (MOBILE) -->
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- LINKS -->
+                <div class="nav-links">
+                    <a href="/index.html#sobre">Sobre</a>
+                    <a href="/index.html#oficinas">Oficinas</a>
+                    <a href="/mural.html">Mural</a>
+                    <a href="/index.html#contato">Voluntarie-se</a>
+                    <a href="/transparencia.html">Transparência</a>
+                    <a href="/doacao.html" class="btn-header">Doar</a>
+                </div>
+
             </nav>
+
 
         </div>
     </header>
@@ -79,16 +93,24 @@
 
         <!-- SOBRE -->
         <section id="sobre" class="section container">
-            <h3>Sobre a ONG</h3>
+            <h3>Sobre a OSC</h3>
             <p>A Associação A Esperança da Criança, fundada em 2018, é uma organização homologada no CMDCA que atua no
-                fortalecimento dos vínculos sociais e familiares de crianças e adolescentes. <br>A ONG desenvolve ações
+                fortalecimento dos vínculos sociais e familiares de crianças e adolescentes. <br>A OSC desenvolve ações
                 de
                 convivência, acolhimento e proteção social, oferecendo refeições e oficinas como artes, música,
                 gastronomia lúdica, inclusão digital, atividades sócioeducativas e recreação. <br>Seu trabalho é
                 realizado
                 em parceria com famílias e a comunidade, promovendo cuidado, pertencimento e desenvolvimento em um
                 ambiente seguro e humanizado.</p>
-                <br>
+            A Associação A Esperança da Criança acredita que vínculos fortes transformam vidas. <br>
+            Nosso compromisso é cuidar, acolher e fortalecer os laços familiares e sociais, criando um ambiente onde
+            crianças se sintam
+            seguras, pertencentes e valorizadas.</p>
+        </section>
+
+        <!-- OFICINAS -->
+        <section id="oficinas" class="section container">
+            <h3>Oficinas</h3>
 
             <div class="grid-3">
                 <div class="card reveal">
@@ -96,35 +118,12 @@
                     <p>Informação</p>
                 </div>
                 <div class="card reveal">
-                    <h4>Segurança Alimentar</h4>
+                    <h4>Oficina</h4>
                     <p>Informação</p>
                 </div>
                 <div class="card reveal">
-                    <h4>Saúde</h4>
+                    <h4>Oficina</h4>
                     <p>Informação</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROGRAMAS -->
-        <section id="programas" class="section container">
-            <h3>Programas</h3>
-
-            <div class="grid-3">
-                <div class="card reveal">
-                    <h4>Programa</h4>
-                    <p>Informação</p>
-                    <a href="#">Contatar</a>
-                </div>
-                <div class="card reveal">
-                    <h4>Programa</h4>
-                    <p>Informação</p>
-                    <a href="#">Contatar</a>
-                </div>
-                <div class="card reveal">
-                    <h4>Programa</h4>
-                    <p>Informação</p>
-                    <a href="#">Contatar</a>
                 </div>
             </div>
         </section>
@@ -163,57 +162,36 @@
             </div>
         </section>
 
-        <!-- EVENTOS
-        <section id="eventos" class="section container">
-            <h3>Eventos</h3>
-
-            <div class="evento-item reveal">
-                <div class="evento-data">
-                    <span class="dia">01</span>
-                    <span class="mes">Dez</span>
-                </div>
-                <div class="evento-info">
-                    <h4>Casa Iluminada de Natal ⭐</h4>
-                    <p>📍 R. Wady Butara, 609 – Marília, SP • 00:00 — 23:59</p>
-                </div>
-            </div>
-
-            <div class="evento-item reveal">
-                <div class="evento-data">
-                    <span class="dia">04</span>
-                    <span class="mes">Dez</span>
-                </div>
-                <div class="evento-info">
-                    <h4>Natal Iluminado 2025 ⭐</h4>
-                    <p>📍 Centro Praça Maria Izabel – Marília, SP • 00:00 — 23:59</p>
-                </div>
-            </div>
-        </section> -->
-
         <!-- CONTATO -->
         <section id="contato" class="section container contato">
-            <h3>Fale Conosco</h3>
 
-            <div class="center-class">
+            <div class="contato-wrapper">
 
-                <form class="contato-form reveal">
-                    <input type="text" placeholder="Nome completo">
-                    <input type="email" placeholder="E-mail">
-                    <input type="text" placeholder="Assunto">
-                    <textarea placeholder="Mensagem"></textarea>
-                    <button class="btn-primary">Enviar</button>
-                </form>
+                <!-- COLUNA ESQUERDA -->
+                <div class="contato-col">
+                    <h3>Fale Conosco</h3>
 
-                <div class="contato-mapa">
+                    <form class="contato-form reveal">
+                        <input type="text" placeholder="Nome completo">
+                        <input type="email" placeholder="E-mail">
+                        <input type="text" placeholder="Assunto">
+                        <textarea placeholder="Mensagem"></textarea>
+                        <button class="btn-primary">Enviar</button>
+                    </form>
+                </div>
+
+                <!-- COLUNA DIREITA -->
+                <div class="contato-col">
                     <h3>Localização</h3>
-                    <p>Sede da ONG</p>
+                    <p>Sede da OSC</p>
 
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.225087422538!2d-49.94469268446839!3d-22.215460385373066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bfd74b1c9c9c9d%3A0x1a1a1a1a1a1a1a1a!2sMar%C3%ADlia%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1730000000000"
-                        width="100%" height="320" style="border:0; border-radius:12px;" allowfullscreen loading="lazy"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d765.8848876887059!2d-49.935015706001046!3d-22.24149487038494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bfda01975ad7f3%3A0xe0159af2b14a281!2sA%20Esperan%C3%A7a%20da%20Crian%C3%A7a!5e1!3m2!1spt-BR!2sbr!4v1769262092397!5m2!1spt-BR!2sbr"
+                        width="50%" height="320" style="border:0; border-radius:12px;" allowfullscreen loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
 
+                    <p>R. José Gerônimo Péres, 630 - Jardim Continental, Marília - SP</p>
                 </div>
 
             </div>
@@ -370,6 +348,42 @@
         }
     </script>
 
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const overlay = document.querySelector('.menu-overlay');
+
+        function openMenu() {
+            navLinks.classList.add('active');
+            overlay.classList.add('active');
+            toggle.classList.add('open');
+        }
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+            overlay.classList.remove('active');
+            toggle.classList.remove('open');
+        }
+
+        toggle.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+
+        // Fecha ao clicar no overlay
+        overlay.addEventListener('click', closeMenu);
+
+        // Fecha ao clicar em qualquer link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+
+
+    <div class="menu-overlay"></div>
 
 </body>
 

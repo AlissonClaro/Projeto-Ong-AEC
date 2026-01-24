@@ -15,7 +15,7 @@
         <div class="header-inner">
 
             <div class="brand">
-                <img src="/source/logo.png" alt="Logo ONG" class="logo">
+                <img src="/source/logo.png" alt="Logo OSC" class="logo">
                 <div class="brand-text">
                     <span class="brand-name">A Esperança da Criança</span>
                     <span class="brand-sub">Trazendo a esperança para as crianças</span>
@@ -23,16 +23,29 @@
             </div>
 
             <nav class="nav">
-                <a href="/index.html">Início</a>
-                <a href="/index.html#sobre">Sobre</a>
-                <a href="/index.html#programas">Programas</a>
-                <a href="/index.html#voluntarie">Voluntarie-se</a>
-                <a href="/doacao.html" class="btn-header">Doar</a>
+
+                <!-- BOTÃO MOBILE -->
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- LINKS -->
+                <div class="nav-links">
+                    <a href="/index.html#sobre">Sobre</a>
+                    <a href="/index.html#oficinas">Oficinas</a>
+                    <a href="/mural.html">Mural</a>
+                    <a href="/index.html#contato">Voluntarie-se</a>
+                    <a href="/transparencia.html">Transparência</a>
+                    <a href="/doacao.html" class="btn-header">Doar</a>
+                </div>
 
             </nav>
 
         </div>
     </header>
+
 
     <main>
 
@@ -395,6 +408,24 @@
             setTimeout(() => glitter.remove(), 1300);
         }
     </script>
+
+    <script>
+        const toggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fecha o menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <div class="menu-overlay"></div>
 
 </body>
 
